@@ -1,0 +1,3725 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../algorithm_basic/">
+      
+      
+        <link rel="next" href="../../about/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.35">
+    
+    
+      
+        <title>leetcode刷题笔记 - winsonYe</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#leetcode" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="winsonYe" class="md-header__button md-logo" aria-label="winsonYe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            winsonYe
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              leetcode刷题笔记
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="winsonYe" class="md-nav__button md-logo" aria-label="winsonYe" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    winsonYe
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    开发
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    后端开发
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            后端开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software_development/backend/interview_experiences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    面经
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    算法题
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            算法题
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algorithm_basic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    算法基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    leetcode刷题笔记
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    leetcode刷题笔记
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      题单
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="题单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      华为推荐题型List
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      21 合并两个升序链表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21 合并两个升序链表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：递归
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二：迭代
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      23 合并K个升序链表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="23 合并K个升序链表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：顺序合并
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二： 分治合并
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三：优先级队列
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      45 跳跃游戏II
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      55 跳跃游戏
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#70" class="md-nav__link">
+    <span class="md-ellipsis">
+      70 爬楼梯
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="70 爬楼梯">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：递归
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二：记忆化搜索
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三：动态规划
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法四：空间优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    <span class="md-ellipsis">
+      84 柱状图最大的矩形
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="84 柱状图最大的矩形">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一： 暴力枚举
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二： 单调栈
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="解法二： 单调栈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      朴素版
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      优化版
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85" class="md-nav__link">
+    <span class="md-ellipsis">
+      85 最大矩形
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="85 最大矩形">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：暴力枚举点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二：单调栈
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      112 路径总和
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="112 路径总和">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      做法：递归
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="做法：递归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      思路版
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      简化版
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      121 买卖股票的最佳时机
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      141 环形链表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      142 环形链表II
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#160" class="md-nav__link">
+    <span class="md-ellipsis">
+      160 相交链表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#200" class="md-nav__link">
+    <span class="md-ellipsis">
+      200 岛屿数量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="200 岛屿数量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一： dfs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二： bfs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三： 并查集
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#206" class="md-nav__link">
+    <span class="md-ellipsis">
+      206 反转链表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="206 反转链表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      迭代版
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      递归版
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#209" class="md-nav__link">
+    <span class="md-ellipsis">
+      209 长度最小的子数组
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="209 长度最小的子数组">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：暴力枚举
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二： 前缀和 + 二分查找
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三：移动窗口
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#234" class="md-nav__link">
+    <span class="md-ellipsis">
+      234 回文链表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="234 回文链表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      递归版
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      迭代版
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#240-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      240 搜索二维矩阵II
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="240 搜索二维矩阵II">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：暴力枚举
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二：二分查找
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#279" class="md-nav__link">
+    <span class="md-ellipsis">
+      279 完全平方数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#503-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      503 下一个更大元素II
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#509" class="md-nav__link">
+    <span class="md-ellipsis">
+      509 斐波那契数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#547" class="md-nav__link">
+    <span class="md-ellipsis">
+      547 省份数量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="547 省份数量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dfs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：dfs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bfs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二： bfs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三： 并查集
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#684" class="md-nav__link">
+    <span class="md-ellipsis">
+      684 冗余连接
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#739" class="md-nav__link">
+    <span class="md-ellipsis">
+      739 每日温度
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#763" class="md-nav__link">
+    <span class="md-ellipsis">
+      763 划分字母区间
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      刷题总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="刷题总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      滑动窗口
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      图：网格问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      并查集
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      单调栈
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl" class="md-nav__link">
+    <span class="md-ellipsis">
+      STL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="STL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      二分查找
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二分查找">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upper_bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      upper_bound
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lower_bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      lower_bound
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      题单
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="题单">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    <span class="md-ellipsis">
+      华为推荐题型List
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      21 合并两个升序链表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21 合并两个升序链表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：递归
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二：迭代
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      23 合并K个升序链表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="23 合并K个升序链表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：顺序合并
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二： 分治合并
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三：优先级队列
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      45 跳跃游戏II
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    <span class="md-ellipsis">
+      55 跳跃游戏
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#70" class="md-nav__link">
+    <span class="md-ellipsis">
+      70 爬楼梯
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="70 爬楼梯">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：递归
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二：记忆化搜索
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三：动态规划
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法四：空间优化
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84" class="md-nav__link">
+    <span class="md-ellipsis">
+      84 柱状图最大的矩形
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="84 柱状图最大的矩形">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一： 暴力枚举
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二： 单调栈
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="解法二： 单调栈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      朴素版
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      优化版
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85" class="md-nav__link">
+    <span class="md-ellipsis">
+      85 最大矩形
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="85 最大矩形">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：暴力枚举点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二：单调栈
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      112 路径总和
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="112 路径总和">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      做法：递归
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="做法：递归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      思路版
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      简化版
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      121 买卖股票的最佳时机
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      141 环形链表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#142-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      142 环形链表II
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#160" class="md-nav__link">
+    <span class="md-ellipsis">
+      160 相交链表
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#200" class="md-nav__link">
+    <span class="md-ellipsis">
+      200 岛屿数量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="200 岛屿数量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一： dfs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二： bfs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三： 并查集
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#206" class="md-nav__link">
+    <span class="md-ellipsis">
+      206 反转链表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="206 反转链表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      迭代版
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      递归版
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#209" class="md-nav__link">
+    <span class="md-ellipsis">
+      209 长度最小的子数组
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="209 长度最小的子数组">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：暴力枚举
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二： 前缀和 + 二分查找
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三：移动窗口
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#234" class="md-nav__link">
+    <span class="md-ellipsis">
+      234 回文链表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="234 回文链表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      递归版
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      迭代版
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#240-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      240 搜索二维矩阵II
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="240 搜索二维矩阵II">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：暴力枚举
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二：二分查找
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#279" class="md-nav__link">
+    <span class="md-ellipsis">
+      279 完全平方数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#503-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      503 下一个更大元素II
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#509" class="md-nav__link">
+    <span class="md-ellipsis">
+      509 斐波那契数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#547" class="md-nav__link">
+    <span class="md-ellipsis">
+      547 省份数量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="547 省份数量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dfs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法一：dfs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bfs_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法二： bfs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      解法三： 并查集
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#684" class="md-nav__link">
+    <span class="md-ellipsis">
+      684 冗余连接
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#739" class="md-nav__link">
+    <span class="md-ellipsis">
+      739 每日温度
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#763" class="md-nav__link">
+    <span class="md-ellipsis">
+      763 划分字母区间
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      刷题总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="刷题总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      滑动窗口
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      图：网格问题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      并查集
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      单调栈
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stl" class="md-nav__link">
+    <span class="md-ellipsis">
+      STL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="STL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      二分查找
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二分查找">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upper_bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      upper_bound
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lower_bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      lower_bound
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="leetcode">leetcode</h1>
+<h2 id="_1">题单</h2>
+<h3 id="list">华为推荐题型List</h3>
+<p>⚠️机考题型参考(如有竞赛经历找群主确认是否可以免考)：
+递归：leetcode70、112、509
+分治：leetcode23、169、240
+单调栈：leetcode84、85、739、503
+并查集：leetcode547、200、684
+滑动窗口：leetcode209、3、1004、1208
+前缀和：leetcode724、560、437、1248
+差分：leetcode1094、121、122
+拓扑排序：leetcode210
+字符串：leetcode5、20、43、93
+二分查找：leetcode33、34
+BFS：leetcode127、139、130、529、815
+DFS&amp;回溯：leetcode934、685、1102、531、533、113、332、337
+动态规划：leetcode213、123、62、63、361、1230
+贪心：leetcode55、435、621、452
+字典树：leetcode820、208、648</p>
+<h2 id="21">21 合并两个升序链表</h2>
+<h3 id="_2">解法一：递归</h3>
+<pre><code>s1: A-&gt;B-&gt;C-&gt;...
+s2: a-&gt;b-&gt;c-&gt;...
+</code></pre>
+<p>假设有链表s1和s2，如果A &lt; a，则本次比较得到链表的下一个元素为A，并且下一次B和a比较；否则，本次比较得到链表的下一个元素为a，下一次A和b比较</p>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        if(!list1)
+            return list2;
+        if(!list2)
+            return list1;
+        if(list1-&gt;val &lt; list2-&gt;val){
+            list1-&gt;next = mergeTwoLists(list1-&gt;next, list2);
+            return list1;
+        }
+        else{
+            list2-&gt;next = mergeTwoLists(list1, list2-&gt;next);
+            return list2;
+        }
+    }
+};
+</code></pre>
+<p><strong>时间复杂度：O(n+m)</strong>，其中 n 和 m 分别为两个链表的长度。因为每次调用递归都会去掉 l1 或者 l2 的头节点（直到至少有一个链表为空），函数 mergeTwoList 至多只会递归调用每个节点一次。因此，时间复杂度取决于合并后的链表长度，即 O(n+m)。</p>
+<p><strong>空间复杂度：O(n+m)</strong>，其中 n 和 m 分别为两个链表的长度。递归调用 mergeTwoLists 函数时需要消耗栈空间，栈空间的大小取决于递归调用的深度。结束递归调用时 mergeTwoLists 函数最多调用 n+m 次，因此空间复杂度为 O(n+m)。</p>
+<h3 id="_3">解法二：迭代</h3>
+<pre><code class="language-c++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+        ListNode* head = new ListNode();
+        ListNode* tail = head;
+        while (list1 != nullptr &amp;&amp; list2 != nullptr) {
+            if (list1-&gt;val &lt; list2-&gt;val) {
+                tail-&gt;next = list1;
+                list1 = list1-&gt;next;
+            } else {
+                tail-&gt;next = list2;
+                list2 = list2-&gt;next;
+            }
+            tail = tail-&gt;next;
+        }
+        tail-&gt;next = list1 == nullptr ? list2 : list1;
+        return head-&gt;next;
+    }
+};
+</code></pre>
+<p><strong>时间复杂度：O(n+m)</strong>，其中 n 和 m 分别为两个链表的长度。因为每次循环迭代中，l1 和 l2 只有一个元素会被放进合并链表中， 因此 while 循环的次数不会超过两个链表的长度之和。所有其他操作的时间复杂度都是常数级别的，因此总的时间复杂度为 O(n+m)。</p>
+<p><strong>空间复杂度：O(1)</strong>。我们只需要常数的空间存放若干变量。</p>
+<h2 id="23-k">23 合并K个升序链表</h2>
+<p>https://leetcode.cn/problems/merge-k-sorted-lists/description/</p>
+<p>本题在<strong>21 合并两个升序链表</strong>的基础上进行加难</p>
+<h3 id="_4">解法一：顺序合并</h3>
+<p>每相邻两个合并升序链表</p>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+private:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2){
+        ListNode* head = new ListNode();
+        ListNode* tail = head;
+        while(list1 != nullptr &amp;&amp; list2 != nullptr){
+            if(list1-&gt;val &lt; list2-&gt;val){
+                tail-&gt;next = list1;
+                list1 = list1-&gt;next;
+            }
+            else{
+                tail-&gt;next = list2;
+                list2 = list2-&gt;next;
+            }
+            tail = tail-&gt;next;
+        }
+        tail-&gt;next = list1 == nullptr ? list2 : list1;
+        return head-&gt;next;
+    }
+public:
+    ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {
+        ListNode* ans = nullptr;
+        for(int i = 0; i &lt; lists.size(); i++){
+            ans = mergeTwoLists(ans, lists[i]);
+        }
+        return ans;
+    }
+};
+</code></pre>
+<h3 id="_5">解法二： 分治合并</h3>
+<p>类似于快速排序，分组合并</p>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+private:
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2){
+        ListNode* head = new ListNode();
+        ListNode* tail = head;
+        while(list1 != nullptr &amp;&amp; list2 != nullptr){
+            if(list1-&gt;val &lt; list2-&gt;val){
+                tail-&gt;next = list1;
+                list1 = list1-&gt;next;
+            }
+            else{
+                tail-&gt;next = list2;
+                list2 = list2-&gt;next;
+            }
+            tail = tail-&gt;next;
+        }
+        tail-&gt;next = list1 == nullptr ? list2 : list1;
+        return head-&gt;next;
+    }
+    ListNode* merge(vector&lt;ListNode*&gt;&amp; lists,int l, int r){
+        if(l == r)
+            return lists[l];
+        if(l &gt; r)
+            return nullptr;
+        int mid = (l + r) &gt;&gt; 1;
+        return mergeTwoLists(merge(lists, l, mid), merge(lists, mid + 1, r));
+    }
+public:
+    ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {
+        return merge(lists, 0, lists.size() - 1);
+    }
+};
+</code></pre>
+<h3 id="_6">解法三：优先级队列</h3>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+private:
+    struct Status{
+        int val;
+        ListNode* ptr;
+
+    };
+    struct cmp{
+        bool operator () (const Status&amp; s1, Status &amp;s2)  const {
+            return s1.val &gt; s2.val;
+        }
+    };
+
+    priority_queue&lt;Status,vector&lt;Status&gt;,cmp&gt; q;
+public:
+    ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {
+        ListNode* head = new ListNode();
+        ListNode* tail = head;
+        for(auto node : lists){
+            if(node)
+                q.push({node-&gt;val, node});
+        }
+        while(!q.empty()){
+            Status s = q.top();
+            q.pop();
+            tail-&gt;next = s.ptr;
+            tail = tail-&gt;next;
+            if(s.ptr-&gt;next)
+                q.push({s.ptr-&gt;next-&gt;val, s.ptr-&gt;next});
+        }
+        return head-&gt;next;
+    }
+};
+</code></pre>
+<p>或写成：</p>
+<p>区别只是在于优先级队列自定义比较的不同写法</p>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+#include &lt;queue&gt;
+class Solution {
+private:
+    struct Status{
+        int val;
+        ListNode* ptr;
+        // 一定要原封不动的这样写
+        bool operator &lt; (const Status&amp;s) const{
+            return val &gt; s.val;
+        }
+    };
+    // 一定要原封不动的这样写
+    priority_queue&lt;Status&gt; q;
+public:
+    ListNode* mergeKLists(vector&lt;ListNode*&gt;&amp; lists) {
+        ListNode* head = new ListNode();
+        ListNode* tail = head;
+        for(auto node : lists){
+            if(node)
+                q.push({node-&gt;val, node});
+        }
+        while(!q.empty()){
+            Status s = q.top();
+            q.pop();
+            tail-&gt;next = s.ptr;
+            tail = tail-&gt;next;
+            if(s.ptr-&gt;next)
+                q.push({s.ptr-&gt;next-&gt;val, s.ptr-&gt;next});
+        }
+        return head-&gt;next;
+    }
+};
+</code></pre>
+<h2 id="45-ii">45 跳跃游戏II</h2>
+<pre><code class="language-C++">class Solution {
+public:
+    int jump(vector&lt;int&gt;&amp; nums) {
+        int n = nums.size();
+        int start = 0, end = start + 1;
+        int ans = 0;
+        while(end &lt; n){
+            int nextStep;
+            for(int i = start; i &lt; end; i++){
+                nextStep = max(nextStep, i + nums[i]);
+            }
+            ans++;
+            start = end;
+            end = nextStep + 1;
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p>优化版</p>
+<pre><code class="language-C++">class Solution {
+public:
+    int jump(vector&lt;int&gt;&amp; nums) {
+        int n = nums.size();
+        // end为边界下标，当前i能遍历的最大下标值
+        int end = 0;
+        int nextStep = 0;
+        int ans = 0;
+        // 问到nums[n - 1]需要的最小跳跃次数，因此不需要计算第n - 1个
+        for(int i = 0; i &lt; n; i++){
+            nextStep = max(nextStep, i + nums[i]);
+            if(i == end){
+                ans++;
+                end = nextStep;
+            }
+        }
+        return ans;
+    }
+};
+</code></pre>
+<h2 id="55">55 跳跃游戏</h2>
+<p>维护最大可达位置nextStep</p>
+<p>如果当前位置i &lt;= nextStep，说明当前位置i可达，可跳到当前位置i上，更新最大可达位置</p>
+<p>如果最大可达位置比n - 1大，说明能够到达n - 1</p>
+<pre><code class="language-C++">class Solution {
+public:
+    bool canJump(vector&lt;int&gt;&amp; nums) {
+        int n = nums.size();
+        int nextStep = 0;
+        for(int i = 0; i &lt; n; i++){
+            if(i &lt;= nextStep){
+                nextStep = max(nextStep, i + nums[i]);
+                if(nextStep &gt;= n - 1)
+                    return true;
+            }
+        }
+        return false;
+    }
+};
+</code></pre>
+<h2 id="70">70 爬楼梯</h2>
+<p>https://leetcode.cn/problems/climbing-stairs/description/</p>
+<h3 id="_7">解法一：递归</h3>
+<pre><code class="language-C++">class Solution {
+public:
+    int climbStairs(int n) {
+        if(n &lt;= 1)
+            return 1;
+        return climbStairs(n - 1) + climbStairs(n - 2);
+    }
+};
+</code></pre>
+<p><strong>时间复杂度：$O(2^n)$</strong></p>
+<p>可视为二叉树，树高为n，节点数为$2^n$，遍历搜索树需要$2^n$次</p>
+<p><strong>空间复杂度：$O(n)$</strong></p>
+<p>n个栈空间</p>
+<h3 id="_8">解法二：记忆化搜索</h3>
+<pre><code class="language-c++">class Solution {
+private:
+    vector&lt;int&gt; m;
+    int dfs(int n){
+        if(n &lt;= 1)
+            return 1;
+        int &amp;res = m[n];
+        if(res)
+            return res;
+        return dfs(n - 1) + dfs(n - 2);
+    }
+public:
+    int climbStairs(int n) {
+        m.resize(n + 1);
+        return dfs(n);
+    }
+};
+</code></pre>
+<p><strong>时间复杂度：$O(n)$</strong></p>
+<p>每个状态只会计算一次，共n个状态</p>
+<p><strong>空间复杂度：$O(n)$</strong></p>
+<p>n个栈空间</p>
+<h3 id="_9">解法三：动态规划</h3>
+<pre><code class="language-c++">class Solution {
+public:
+    vector&lt;int&gt; dp;
+    int climbStairs(int n) {
+        dp.resize(n + 1);
+        dp[0] = 1;
+        dp[1] = 1;
+        for(int i = 2; i &lt;= n; i++)
+            dp[i] = dp[i - 1] + dp[i - 2];
+        return dp[n];
+    }
+};
+</code></pre>
+<p><strong>时间复杂度：$O(n)$</strong></p>
+<p>状态数n * 状态计算1次</p>
+<p><strong>空间复杂度：$O(n)$</strong></p>
+<p>n个状态</p>
+<h3 id="_10">解法四：空间优化</h3>
+<pre><code class="language-c++">class Solution {
+public:
+    int climbStairs(int n) {
+        int a = 0, b = 1, c;
+        for(int i = 1; i &lt;= n; i++){
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        return c;
+    }
+};
+</code></pre>
+<p><strong>时间复杂度：$O(n)$</strong></p>
+<p>状态数n * 状态计算1次</p>
+<p><strong>空间复杂度：$O(1)$</strong></p>
+<p>只需3个变量</p>
+<h2 id="84">84 柱状图最大的矩形</h2>
+<p>https://leetcode.cn/problems/largest-rectangle-in-histogram/description/</p>
+<h3 id="_11">解法一： 暴力枚举</h3>
+<p>枚举宽：枚举左边界，再枚举右边界</p>
+<pre><code class="language-c++">class Solution {
+public:
+    int largestRectangleArea(vector&lt;int&gt;&amp; heights) {
+        int ans = 0;
+        int n = heights.size();
+        for(int i = 0; i &lt; n; i++){
+            int minHeight = heights[i];
+            for(int j = i; j &lt; n; j++){
+                minHeight = min(minHeight, heights[j]);
+                ans = max(ans, (j - i + 1) * minHeight);
+            }
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p>枚举高：</p>
+<pre><code class="language-C++">class Solution {
+public:
+    int largestRectangleArea(vector&lt;int&gt;&amp; heights) {
+        int ans = 0;
+        int n = heights.size();
+        // 枚举每根柱子的高度
+        for(int mid = 0; mid &lt; n; mid++){
+            int height = heights[mid];
+            int left = mid, right = mid;
+            // 如果左右柱子比当前枚举的柱子高，那么矩形的高度仍然为当前枚举柱子的高度heights[mid]
+            while(left - 1 &gt;= 0 &amp;&amp; heights[left - 1] &gt;= height) --left;
+            while(right + 1 &lt; n &amp;&amp; heights[right + 1] &gt;= height) ++right;
+            // 注意这里left和right都指向最后一个比枚举柱子高度大的柱子
+            // 与单调栈做法不同，这里为right - left + 1（单调栈是right - left - 1）
+            ans = max(ans, (right - left + 1) * height);
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p>可以发现，这两种暴力方法的时间复杂度均为$ O(N^2)$，会超出时间限制，我们必须要进行优化。考虑到枚举「宽」的方法使用了两重循环，本身就已经需要 $O(N^2)$的时间复杂度，不容易优化，因此我们可以考虑优化只使用了一重循环的枚举「高」的方法。</p>
+<h3 id="_12">解法二： 单调栈</h3>
+<h4 id="_13">朴素版</h4>
+<blockquote>
+<p>单调栈常用于查找比它大的第一个数 or 比它小的第一个数</p>
+<p>单调递增栈：栈内离栈顶越近（下标越大），栈元素越大；栈顶元素为栈内最大</p>
+<ul>
+<li>当有新元素进入，如果新元素比栈顶元素大，直接入栈。</li>
+<li>当有新元素进入，如果新元素比栈顶元素小，栈弹出，直到满足新元素比栈顶元素大，再将新元素入栈。</li>
+</ul>
+<p>由此可见，新元素C使栈顶元素A弹出后，下一个栈顶元素B是A左边第一个比B小的元素，新元素C是A右边第一个比C小的元素</p>
+</blockquote>
+<p>由暴力枚举高的解法可知道，我们枚举高度后需要分别往两边寻找比它矮的第一个柱子（数），因此可以使用单调栈</p>
+<pre><code class="language-c++">class Solution {
+public:
+    int largestRectangleArea(vector&lt;int&gt;&amp; heights) {
+        int ans = 0;
+        int n = heights.size();
+        vector&lt;int&gt; left(n), right(n);
+        stack&lt;int&gt; stk;
+        for(int i = 0; i &lt; n; i++){
+            while(!stk.empty() &amp;&amp; heights[stk.top()] &gt;= heights[i]) stk.pop();
+            left[i] = (stk.empty() ? -1 : stk.top());
+            stk.push(i);
+        }
+        stk = stack&lt;int&gt;();
+        for(int i = n - 1; i &gt;= 0; i--){
+            while(!stk.empty() &amp;&amp; heights[stk.top()] &gt;= heights[i]) stk.pop();
+            right[i] = (stk.empty() ? n : stk.top());
+            stk.push(i);
+        }
+        for(int i = 0; i &lt; n; i++){
+            // right 和 left 都指向第一个比枚举柱子小的柱子，因此不包含left 和 right
+            // 宽度计算为： (right - 1) - (left + 1) + 1 = right - left - 1
+            ans = max(ans, (right[i] - left[i] - 1) * heights[i]);
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：<em>O</em>(<em>N</em>)。</li>
+<li>空间复杂度：<em>O</em>(<em>N</em>)。</li>
+</ul>
+<p>每一个位置只会入栈一次（在枚举到它时），并且最多出栈一次。</p>
+<p>因此当我们从左向右/总右向左遍历数组时，对栈的操作的次数就为 <em>O</em>(<em>N</em>)。所以单调栈的总时间复杂度为 <em>O</em>(<em>N</em>)。</p>
+<h4 id="_14">优化版</h4>
+<p>对上述进行优化</p>
+<blockquote>
+<p>新元素C使栈顶元素A弹出后，下一个栈顶元素B是A左边第一个比B小的元素，新元素C是A右边第一个比C小的元素</p>
+</blockquote>
+<pre><code class="language-C++">class Solution {
+public:
+    int largestRectangleArea(vector&lt;int&gt;&amp; heights) {
+        int len = heights.size() + 2;
+        vector&lt;int&gt; height(len);
+        // 在heights数组基础上在头尾加上0元素
+        // 这是因为以heights[0]（heights[heights.size() - 1]）作为柱子高度时，缺少左边界（右边界）
+        // 为其补上左右边界，使其能够计算heights[0]（heights[heights.size() - 1]）作为柱子高度时的面积
+        height[0] = 0;
+        height[len - 1] = 0;
+        for(int i = 1; i &lt; len - 1; i++)
+            height[i] = heights[i - 1];
+        stack&lt;int&gt; stk;
+        int ans = 0;
+        for(int i = 0; i &lt; len; i++){
+            while(!stk.empty() &amp;&amp; height[i] &lt; height[stk.top()]){
+                // 新元素i让栈弹出，栈顶元素为stk.top()
+                int idx = stk.top();
+                stk.pop();
+                // 这里的stk.top()为弹出后的下一个栈顶元素
+                int w = i - stk.top() - 1;
+                // 高度为最初的栈顶元素
+                ans = max(ans, w * height[idx]);
+            }
+            // 没有弹出时不需要计算面积
+            stk.push(i);
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：<em>O</em>(<em>N</em>)。</li>
+<li>空间复杂度：<em>O</em>(<em>N</em>)。</li>
+</ul>
+<h2 id="85">85 最大矩形</h2>
+<p>https://leetcode.cn/problems/maximal-rectangle/</p>
+<p>若<code>matrix[i][j] == ‘1’</code>，那么以该点为矩形的右下角</p>
+<ul>
+<li>记<code>left[i][j]</code>为第i行第j列元素左边连续1的个数（包括第i行第j列）</li>
+<li>那么矩形可以转换为若干个柱形，<code>left[i][j]</code>为柱形的高度，题目就变成了84 求柱状图最大的柱形</li>
+<li>宽度为k - i + 1，k为第i行前的第k行</li>
+</ul>
+<p>换一下坐标轴，宽度就是代码中的高度，高度就是代码中的宽度</p>
+<h3 id="_15">解法一：暴力枚举点</h3>
+<pre><code class="language-C++">class Solution {
+public:
+    int maximalRectangle(vector&lt;vector&lt;char&gt;&gt;&amp; matrix) {
+        int n = matrix.size();
+        int m = matrix[0].size();
+        vector&lt;vector&lt;int&gt;&gt; left(n,vector&lt;int&gt;(m, 0));
+        for (int i = 0; i &lt; n; i++) {
+            for (int j = 0; j &lt; m; j++) {
+                if (matrix[i][j] == '1') {
+                    left[i][j] = (j == 0 ? 0: left[i][j - 1]) + 1;
+                }
+            }
+        }
+        int ans = 0;
+        for(int i = 0; i &lt; n; i++){
+            for(int j = 0; j &lt; m; j++){
+                if(matrix[i][j] == '1'){
+                    int w = left[i][j];
+                    // 这里area初始化为w, 因为假设matrix[k][j]都为'0', 宽度至少为1
+                    int area = w;
+                    for(int k = i - 1; k &gt;= 0; k--){
+                        w = min(w, left[k][j]);
+                        area = max(area, (i - k + 1) * w);
+                    }
+                    ans = max(ans, area);
+                }
+            }
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p>复杂度分析</p>
+<p>时间复杂度：$O(m^2n)$，其中 m 和 n 分别是矩阵的行数和列数。计算 left 矩阵需要 O(mn) 的时间。随后对于矩阵的每个点，需要 O(m) 的时间枚举高度。故总的时间复杂度为$ O(mn)+O(mn)⋅O(m)=O(m^2n)$。</p>
+<p>空间复杂度：$O(mn)$，其中 m 和 n 分别是矩阵的行数和列数。我们分配了一个与给定矩阵等大的数组，用于存储每个元素的左边连续 1 的数量。</p>
+<h3 id="_16">解法二：单调栈</h3>
+<p>同84 一样，需要求出柱形图最小的高度（代码中为宽度）</p>
+<p>与84不同之处在于，本题可以拆分为m列 柱形图，将84题的代码处理m次即可</p>
+<pre><code class="language-c++">class Solution {
+public:
+    int maximalRectangle(vector&lt;vector&lt;char&gt;&gt;&amp; matrix) {
+        int n = matrix.size();
+        int m = matrix[0].size();
+        vector&lt;vector&lt;int&gt;&gt; left(n, vector&lt;int&gt;(m, 0));
+        for(int i = 0; i &lt; n; i++){
+            for(int j = 0; j &lt; m; j++){
+                if(matrix[i][j] == '1')
+                    left[i][j] = (j == 0 ? 0 : left[i][j - 1]) + 1;
+            }
+        }
+        int ans = 0;
+        int len = n + 2;
+        // 枚举每一列
+        for(int j = 0; j &lt; m; j++){
+            stack&lt;int&gt; stk;
+            int area = 0;        
+            vector&lt;int&gt; ll(len);
+            ll[0] = 0;
+            ll[len - 1] = 0;
+            // 初始化别弄反了，是left[k - 1][j]，不是left[j][k - 1]
+            for(int k = 1; k &lt; len - 1; k++)
+                ll[k] = left[k - 1][j];
+            for(int i = 0; i &lt; len; i++){
+                while(!stk.empty() &amp;&amp; ll[i] &lt; ll[stk.top()]){
+                    int idx = stk.top();
+                    stk.pop();
+                    int w = i - stk.top() - 1;
+                    area = max(area, w * ll[idx]);
+                }
+                stk.push(i);
+            }
+            ans = max(ans, area);
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p>复杂度分析</p>
+<p>时间复杂度：O(mn)，其中 m 和 n 分别是矩阵的行数和列数。计算 left 矩阵需要 O(mn) 的时间；对每一列应用柱状图算法需要 O(m) 的时间，一共需要 O(mn) 的时间。</p>
+<p>空间复杂度：O(mn)，其中 m 和 n 分别是矩阵的行数和列数。我们分配了一个与给定矩阵等大的数组，用于存储每个元素的左边连续 1 的数量。</p>
+<h2 id="112">112 路径总和</h2>
+<p>https://leetcode.cn/problems/path-sum/description/</p>
+<h3 id="_17">做法：递归</h3>
+<p>本做法中的targetSum为<strong>剔除掉当前节点剩余的targetSum</strong>，即左/右节点到达子节点需要走的路径和</p>
+<h4 id="_18">思路版</h4>
+<p>该版本没有怎么简化，着重于详细的思路</p>
+<pre><code class="language-C++">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+private:
+    bool dfs(TreeNode* root, int targetSum){
+        // 判断是否存在左节点
+        if(root-&gt;left){
+            // 如果左节点存在满足条件的路径，那么当前节点也存在满足条件的路径
+            if(dfs(root-&gt;left, targetSum - root-&gt;left-&gt;val))
+                return true;
+        }
+        // 右节点同理
+        if(root-&gt;right){
+            if(dfs(root-&gt;right, targetSum - root-&gt;right-&gt;val))
+                return true;
+        }
+        // 如果当前节点为叶子节点
+        if(!root-&gt;left &amp;&amp; !root-&gt;right){
+            if(targetSum == 0)
+                return true;
+            else 
+                return false;
+        }
+        return false;       
+    }
+public:
+    bool hasPathSum(TreeNode* root, int targetSum) {
+        // 如果根节点没空，不存在题解
+        if(!root)
+            return false;
+        return dfs(root, targetSum - root-&gt;val);
+    }
+};
+</code></pre>
+<p>或写成</p>
+<pre><code class="language-C++">class Solution {
+private:
+    bool traversal(TreeNode* cur, int count) {
+        if (!cur-&gt;left &amp;&amp; !cur-&gt;right &amp;&amp; count == 0) return true; // 遇到叶子节点，并且计数为0
+        if (!cur-&gt;left &amp;&amp; !cur-&gt;right) return false; // 遇到叶子节点直接返回
+
+        if (cur-&gt;left) { // 左
+            count -= cur-&gt;left-&gt;val; // 递归，处理节点;
+            if (traversal(cur-&gt;left, count)) return true;
+            count += cur-&gt;left-&gt;val; // 回溯，撤销处理结果
+        }
+        if (cur-&gt;right) { // 右
+            count -= cur-&gt;right-&gt;val; // 递归，处理节点;
+            if (traversal(cur-&gt;right, count)) return true;
+            count += cur-&gt;right-&gt;val; // 回溯，撤销处理结果
+        }
+        return false;
+    }
+
+public:
+    bool hasPathSum(TreeNode* root, int sum) {
+        if (root == NULL) return false;
+        return traversal(root, sum - root-&gt;val);
+    }
+};
+</code></pre>
+<h4 id="_19">简化版</h4>
+<pre><code class="language-C++">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    bool hasPathSum(TreeNode* root, int targetSum) {
+        if(root == NULL) return false;
+        if(!root-&gt;left &amp;&amp; !root-&gt;right &amp;&amp; targetSum == root-&gt;val)   return true;
+        return hasPathSum(root-&gt;left, targetSum - root-&gt;val) || hasPathSum(root-&gt;right, targetSum - root-&gt;val);
+    }
+};
+</code></pre>
+<h2 id="121">121 买卖股票的最佳时机</h2>
+<p>贪心：找出最低的价格买入，找出最高的价格买出</p>
+<pre><code class="language-C++">class Solution {
+public:
+    int maxProfit(vector&lt;int&gt;&amp; prices) {
+        int cost = INT_MAX, profit = 0;
+        for(int i = 0;i &lt; prices.size(); i++){
+            cost = min(cost, prices[i]);
+            profit = max(profit, prices[i] - cost);
+        }
+        return profit;
+    }
+};
+</code></pre>
+<h2 id="141">141 环形链表</h2>
+<p>根据题意：一个节点没有环</p>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool hasCycle(ListNode *head) {
+        if(head == nullptr || head-&gt;next == nullptr)
+            return false;
+        ListNode* fast = head, *slow = head;
+        while(true){
+            if(fast == nullptr || fast-&gt;next == nullptr)
+                return false;
+            fast = fast-&gt;next-&gt;next;
+            slow = slow-&gt;next;
+            if(fast == slow) 
+                break;
+        }
+        return true;
+    }
+};
+</code></pre>
+<h2 id="142-ii">142 环形链表II</h2>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode *detectCycle(ListNode *head) {
+        if(head == nullptr || head-&gt;next == nullptr)
+            return nullptr;
+        ListNode* fast = head, *slow = head;
+        while(true){
+            if(fast == nullptr || fast-&gt;next == nullptr)
+                return nullptr;
+            fast = fast-&gt;next-&gt;next;
+            slow = slow-&gt;next;
+            if(fast == slow)    break;
+        }
+        fast = head;
+        while(slow != fast){
+            fast = fast-&gt;next;
+            slow = slow-&gt;next;
+        }
+        return fast;
+    }
+};
+</code></pre>
+<h2 id="160">160 相交链表</h2>
+<p>https://leetcode.cn/problems/intersection-of-two-linked-lists/?envType=study-plan-v2&amp;envId=top-100-liked</p>
+<p>拼接链表A和链表B，拼接后，两个链表同时开始往尾部遍历，</p>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+        ListNode* a = headA, *b = headB;
+        while(a != b){
+            a = a != nullptr ? a-&gt;next : headB;
+            b = b != nullptr ? b-&gt;next : headA;
+        }
+        return a;
+    }
+};
+</code></pre>
+<h2 id="200">200 岛屿数量</h2>
+<blockquote>
+<p>题解中这里修改了原数组，大家如果面试的时候，要问清楚面试官是否能修改原数组，不能的话就得加入标记数组，不要一给题就直接上手</p>
+</blockquote>
+<h3 id="dfs">解法一： dfs</h3>
+<p>我的解法</p>
+<pre><code class="language-C++">class Solution {
+private:
+    int dx[4] = {-1, 0, 1, 0};
+    int dy[4] = {0, 1, 0, -1};
+    void dfs(vector&lt;vector&lt;char&gt;&gt;&amp; grid, vector&lt;vector&lt;bool&gt;&gt;&amp; isVisited, int x,
+             int y) {
+        int n = grid.size();
+        int m = grid[0].size();
+        for (int i = 0; i &lt; 4; i++) {
+            int a = x + dx[i];
+            int b = y + dy[i];
+            if (a &gt;= 0 &amp;&amp; a &lt; n &amp;&amp; b &gt;= 0 &amp;&amp; b &lt; m &amp;&amp; grid[a][b] == '1' &amp;&amp;
+                !isVisited[a][b]) {
+                isVisited[a][b] = true;
+                dfs(grid, isVisited, a, b);
+            }
+        }
+    }
+
+public:
+    int numIslands(vector&lt;vector&lt;char&gt;&gt;&amp; grid) {
+        int n = grid.size();
+        int m = grid[0].size();
+        vector&lt;vector&lt;bool&gt;&gt; isVisited(n, vector&lt;bool&gt;(m, false));
+        int ans = 0;
+        for (int i = 0; i &lt; n; i++) {
+            for (int j = 0; j &lt; m; j++) {
+                if (grid[i][j] == '1' &amp;&amp; !isVisited[i][j]) {
+                    ans++;
+                    isVisited[i][j] = true;
+                    dfs(grid, isVisited, i, j);
+                }
+            }
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p>复杂度分析</p>
+<p>时间复杂度：O(MN)，其中 M 和 N 分别为行数和列数。</p>
+<p>空间复杂度：O(MN)，在最坏情况下，整个网格均为陆地，深度优先搜索的深度达到 MN。</p>
+<h3 id="bfs">解法二： bfs</h3>
+<p>我的解法</p>
+<p>与dfs类似</p>
+<pre><code class="language-C++">class Solution {
+private:
+    typedef pair&lt;int,int&gt; PII;
+    int dx[4] = {-1, 0, 1, 0};
+    int dy[4] = {0, 1, 0, -1};
+    void bfs(vector&lt;vector&lt;char&gt;&gt;&amp; grid, vector&lt;vector&lt;bool&gt;&gt;&amp; isVisited, int x, int y){
+        int n = grid.size();
+        int m = grid[0].size();
+        queue&lt;PII&gt; q;
+        q.push({x, y});
+        while(!q.empty()){
+            auto t = q.front();
+            q.pop();
+            for(int i = 0; i &lt; 4; i++){
+                int a = t.first + dx[i];
+                int b = t.second + dy[i];
+                if(a &gt;= 0 &amp;&amp; a &lt; n &amp;&amp; b &gt;=0 &amp;&amp; b &lt; m &amp;&amp; grid[a][b] == '1' &amp;&amp; !isVisited[a][b]){
+                    isVisited[a][b] = true;
+                    q.push({a, b});
+                }
+            }
+        }
+    }
+public:
+    int numIslands(vector&lt;vector&lt;char&gt;&gt;&amp; grid) {
+        int n = grid.size();
+        int m = grid[0].size();
+        vector&lt;vector&lt;bool&gt;&gt; isVisited(n, vector&lt;bool&gt;(m, false));
+        int ans = 0;
+        for(int i = 0; i &lt; n; i++){
+            for(int j = 0; j &lt; m; j++){
+                if(grid[i][j] == '1' &amp;&amp; !isVisited[i][j]){
+                    ans++;
+                    bfs(grid, isVisited, i, j);
+                }
+            }
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：O(MN)，其中 M 和 N 分别为行数和列数。</p>
+<p>空间复杂度：O(min(M,N))，在最坏情况下，整个网格均为陆地，队列的大小可以达到 min(M,N)。</p>
+<h3 id="_20">解法三： 并查集</h3>
+<pre><code class="language-C++">class Solution {
+private:
+    vector&lt;int&gt; p;
+    vector&lt;bool&gt; isVisited;
+    int res;
+    int dx[4] = {-1, 0, 1, 0};
+    int dy[4] = {0, 1, 0, -1};
+    int Find(int x) {
+        if (p[x] != x)
+            p[x] = Find(p[x]);
+        return p[x];
+    }
+    void Union(int x, int y) {
+        // 每次合并都要res减一，因此如果合并过直接跳过，以免res多减
+        if (Find(x) == Find(y))
+            return;
+        p[Find(x)] = Find(y);
+        res--;
+    }
+
+public:
+    int numIslands(vector&lt;vector&lt;char&gt;&gt;&amp; grid) {
+        int n = grid.size();
+        int m = grid[0].size();
+        p.resize(n * m);
+        isVisited.resize(n * m);
+        res = 0;
+        for (int i = 0; i &lt; n; i++) {
+            for (int j = 0; j &lt; m; j++) {
+                int idx = i * m + j;
+                if (grid[i][j] == '1') {
+                    p[idx] = idx;
+                    res++;
+                }
+            }
+        }
+        for (int i = 0; i &lt; n; i++) {
+            for (int j = 0; j &lt; m; j++) {
+                int idx = i * m + j;
+                if (grid[i][j] == '1') {
+                    // 只有这个地方需要标记已遍历
+                    isVisited[idx] = true;
+                    for (int k = 0; k &lt; 4; k++) {
+                        int a = i + dx[k];
+                        int b = j + dy[k];
+                        if (a &gt;= 0 &amp;&amp; a &lt; n &amp;&amp; b &gt;= 0 &amp;&amp; b &lt; m &amp;&amp;
+                            grid[a][b] == '1' &amp;&amp; !isVisited[a * m + b]) {
+                            // 这里不需要标记遍历，因为Union不会继续往下访问下一个节点
+                            // 不是递归函数！
+                            Union(idx, a * m + b);
+                        }
+                    }
+                }
+            }
+        }
+        return res;
+    }
+};
+</code></pre>
+<p>复杂度分析</p>
+<p>时间复杂度：O(MN×α(MN))，其中 M 和 N 分别为行数和列数。注意当使用路径压缩（见 find 函数）和按秩合并（见数组 rank）实现并查集时，单次操作的时间复杂度为 α(MN)，其中 α(x) 为反阿克曼函数，当自变量 x 的值在人类可观测的范围内（宇宙中粒子的数量）时，函数 α(x) 的值不会超过 5，因此也可以看成是常数时间复杂度。</p>
+<p>空间复杂度：O(MN)，这是并查集需要使用的空间。</p>
+<blockquote>
+<p>我没有使用按秩合并</p>
+</blockquote>
+<h2 id="206">206 反转链表</h2>
+<h3 id="_21">迭代版</h3>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* prev = nullptr;
+        ListNode* cur = head;
+        while(cur){
+            ListNode* next = cur-&gt;next;
+            cur-&gt;next = prev;
+            prev = cur;
+            cur = next;
+        }
+        // cur指向nullptr, prev指向原链表最后一个元素（新链表头节点）
+        return prev;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：<em>O</em>(<em>n</em>)，其中 <em>n</em> 是链表的长度。需要遍历链表一次。</li>
+<li>空间复杂度：<em>O</em>(1)。</li>
+</ul>
+<h3 id="_22">递归版</h3>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(!head || !head-&gt;next)
+            return head;
+        ListNode* newHead = reverseList(head-&gt;next);
+        head-&gt;next-&gt;next = head;
+        head-&gt;next = nullptr;
+        return newHead;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：O(n)，其中 n 是链表的长度。需要对链表的每个节点进行反转操作。</p>
+<p>空间复杂度：O(n)，其中 n 是链表的长度。空间复杂度主要取决于递归调用的栈空间，最多为 n 层。</p>
+<h2 id="209">209 长度最小的子数组</h2>
+<p>https://leetcode.cn/problems/minimum-size-subarray-sum/description/</p>
+<p>题目关键在于：这个子数组是连续的</p>
+<h3 id="_23">解法一：暴力枚举</h3>
+<p>先枚举子数组的起点，再往后枚举，满足sum &gt;= target停止，计算子数组长度 j - i + 1</p>
+<pre><code class="language-C++">class Solution {
+private:
+    const int INF = 0x3f3f3f3f;
+public:
+    int minSubArrayLen(int target, vector&lt;int&gt;&amp; nums) {
+        int n = nums.size();
+        int ans = INF;
+        for(int i = 0; i &lt; n; i++){
+            int sum = 0;
+            for(int j = i; j &lt; n; j++){
+                sum += nums[j];
+                if(sum &gt;= target)
+                    ans = min(ans, j - i + 1);
+            }
+        }
+        if(ans == INF) 
+            return 0;
+        else
+            return ans;
+    }
+};
+</code></pre>
+<p>复杂度分析</p>
+<p>时间复杂度：$O(n^2)$，其中 n 是数组的长度。需要遍历每个下标作为子数组的开始下标，对于每个开始下标，需要遍历其后面的下标得到长度最小的子数组。</p>
+<p>空间复杂度：O(1)。</p>
+<h3 id="_24">解法二： 前缀和 + 二分查找</h3>
+<p>解法一枚举起点之后又向后枚举了n个元素才找到sum &gt;= target</p>
+<p>由于本题限定了“正整数元素”，对于这种找到第一个满足sum &gt;= target的元素，显然可以使用二分查找</p>
+<p>我们的目标是sum &gt;= target 而不是num &gt;= target，因此需要一个数组记录每个元素作为末尾时的sum[i]</p>
+<p>因此想到前缀和</p>
+<pre><code class="language-C++">class Solution {
+private:
+    const int INF = 0x3f3f3f3f;
+
+public:
+    int minSubArrayLen(int target, vector&lt;int&gt;&amp; nums) {
+        int n = nums.size();
+        vector&lt;int&gt; s(n + 1);
+        //  计算前缀和
+        for (int i = 1; i &lt;= n; i++) {
+            // 这里原本是nums[i]，但是nums和s的下标之间偏移了1
+            s[i] = s[i - 1] + nums[i - 1];
+        }
+        int ans = INF;
+        // 遍历起点，由于是遍历前缀和，所以下标可直接从1开始
+        for (int i = 1; i &lt;= n; i++) {
+            // 我们要找到sum &gt;= target
+            // sum = s[idx] - s[i - 1]
+            // 因此二分查找的目标为在数组s中找到大于等于target + s[i -
+            // 1]的第一个元素
+            int t = target + s[i - 1];
+            auto it = lower_bound(s.begin(), s.end(), t);
+            if (it != s.end()) {
+                int idx = distance(s.begin(), it);
+                ans = min(ans, idx - i + 1);
+            }
+        }
+        return ans == INF ? 0 : ans;
+    }
+};
+</code></pre>
+<p>二分自己实现如下：</p>
+<pre><code class="language-C++">class Solution {
+private:
+    const int INF = 0x3f3f3f3f;
+
+public:
+    int minSubArrayLen(int target, vector&lt;int&gt;&amp; nums) {
+        int n = nums.size();
+        vector&lt;int&gt; s(n + 1);
+        //  计算前缀和
+        for (int i = 1; i &lt;= n; i++) {
+            // 这里原本是nums[i]，但是nums和s的下标之间偏移了1
+            s[i] = s[i - 1] + nums[i - 1];
+        }
+        int ans = INF;
+        // 遍历起点，由于是遍历前缀和，所以下标可直接从1开始
+        for (int i = 1; i &lt;= n; i++) {
+            // 我们要找到sum &gt;= target
+            // sum = s[idx] - s[i - 1]
+            // 因此二分查找的目标为在数组s中找到大于等于target + s[i - 1]的第一个元素
+            int t = target + s[i - 1];
+            int l = i, r = n;
+            while(l &lt; r){
+                int mid = l + r &gt;&gt; 1;
+                if(s[mid] &gt;= t) r = mid;
+                else l = mid + 1;
+            }
+            if(s[l] &gt;= t)
+                ans = min(ans, l - i + 1);
+        }
+        return ans == INF ? 0 : ans;
+    }
+};
+</code></pre>
+<h3 id="_25">解法三：移动窗口</h3>
+<p>由于题目的子数组是连续的序列，求sum &gt;= target子数组长度最小值，实际上是要求子数组滑动时的最小值 &gt;= target</p>
+<p>想让子数组长度最小，意味着这个移动窗口的长度不定，因此移动窗口的头部也需要改变</p>
+<p>加进一个元素</p>
+<pre><code class="language-C++">class Solution {
+private:
+    const int INF = 0x3f3f3f3f;
+public:
+    int minSubArrayLen(int target, vector&lt;int&gt;&amp; nums) {
+        int n = nums.size();
+        int start = 0, end = 0;
+        int ans = INF;
+        int sum = 0;
+        while(end &lt; n){
+            sum += nums[end];
+            while(sum &gt;= target){
+                ans = min(ans, end - start + 1);
+                sum -= nums[start];
+                start++;
+            }
+            end++;
+        }
+        return ans == INF ? 0 : ans;
+    }
+};
+</code></pre>
+<p>以上是双指针做法</p>
+<p>如果套模板，使用队列解决，则是：</p>
+<pre><code class="language-C++">class Solution {
+private:
+    const int INF = 0x3f3f3f3f;
+public:
+    int minSubArrayLen(int target, vector&lt;int&gt;&amp; nums) {
+        int n = nums.size();
+        queue&lt;int&gt; q;
+        int sum = 0;
+        int ans = INF;
+        for(int i = 0; i &lt; n; i++){
+            // 先加nums[i] 再对队头进行判断
+            q.push(i);
+            sum += nums[i];
+            // 处理队头
+            while(!q.empty() &amp;&amp; sum &gt;= target){
+                sum -= nums[q.front()];
+                ans = min(ans, q.back() - q.front() + 1);
+                q.pop();
+            }
+        }
+        return ans == INF ? 0 : ans;
+    }
+};
+</code></pre>
+<p>需要注意的是，队列的头是早加入的元素，尾是刚刚加入的元素，即头对应start，尾对应end</p>
+<h2 id="234">234 回文链表</h2>
+<p>https://leetcode.cn/problems/palindrome-linked-list/solutions/457059/hui-wen-lian-biao-by-leetcode-solution/?envType=study-plan-v2&amp;envId=top-100-liked</p>
+<h3 id="_26">递归版</h3>
+<p>利用函数递归特性，当函数遍历到最底层遇到终止条件才会返回，终止条件设置为nullptr，则函数到达最后一个节点才会返回</p>
+<p>此时我们设置firstPointer指向第一个节点，当函数开始返回时，将curNode与firstPointer的值进行比较</p>
+<p>如果某次比较发现不相等，那么说明不是回文链表，需要向上传递结果，因此返回值设置为bool类型</p>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+private:
+    ListNode* firstPointer;
+public:
+    bool recursivelyCheck(ListNode* curNode){
+        if(!curNode)
+            return true;
+        if(!recursivelyCheck(curNode-&gt;next))
+            return false;
+        if(firstPointer-&gt;val != curNode-&gt;val)
+            return false;
+        firstPointer = firstPointer-&gt;next;
+        return true;
+    }
+    bool isPalindrome(ListNode* head) {
+        firstPointer = head;
+        return recursivelyCheck(head);
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：<em>O</em>(<em>n</em>)，其中 <em>n</em> 指的是链表的大小。</li>
+<li>空间复杂度：<em>O</em>(<em>n</em>)，其中 <em>n</em> 指的是链表的大小。</li>
+</ul>
+<h3 id="_27">迭代版</h3>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+private:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* prev = nullptr;
+        ListNode* cur = head;
+        while (cur) {
+            ListNode* next = cur-&gt;next;
+            cur-&gt;next = prev;
+            prev = cur;
+            cur = next;
+        }
+        return prev;
+    }
+    ListNode* getFirstEnd(ListNode* head) {
+        ListNode *fast = head, *slow = head;
+        while (fast-&gt;next != nullptr &amp;&amp; fast-&gt;next-&gt;next != nullptr) {
+            fast = fast-&gt;next-&gt;next;
+            slow = slow-&gt;next;
+        }
+        return slow;
+    }
+
+public:
+    bool isPalindrome(ListNode* head) {
+        if (!head)
+            return true;
+        ListNode* firstEnd = getFirstEnd(head);
+        ListNode* secondHead = reverseList(firstEnd-&gt;next);
+        ListNode *p1 = head, *p2 = secondHead;
+        while (p2) {
+            if (p1-&gt;val != p2-&gt;val)
+                return false;
+            p1 = p1-&gt;next;
+            p2 = p2-&gt;next;
+        }
+        // 如果需要恢复原状
+        firstEnd-&gt;next = reverseList(secondHead);
+        return true;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：O(n)，其中 n 指的是链表的大小。</p>
+<p>空间复杂度：O(1)。我们只会修改原本链表中节点的指向，而在堆栈上的堆栈帧不超过 O(1)。</p>
+<h2 id="240-ii">240 搜索二维矩阵II</h2>
+<p>https://leetcode.cn/problems/search-a-2d-matrix-ii/description/</p>
+<h3 id="_28">解法一：暴力枚举</h3>
+<p>无脑解法，没有利用题意“升序”</p>
+<pre><code class="language-C++">class Solution {
+public:
+    bool searchMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) {
+        for(int i = 0; i &lt; matrix.size(); i++){
+            for(int j = 0; j &lt; matrix[i].size(); j++){
+                if(matrix[i][j] == target)
+                    return true;
+            }
+        }
+        return false;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：<em>O</em>(<em>mn</em>)。</li>
+<li>空间复杂度：<em>O</em>(1)。</li>
+</ul>
+<h3 id="_29">解法二：二分查找</h3>
+<p>利用题意“升序”可直接二分查找</p>
+<pre><code class="language-c++">class Solution {
+public:
+    bool searchMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) {
+        // 这里要用引用，不然会报内存超出
+        for(const auto &amp;row : matrix){
+            auto it = lower_bound(row.begin(), row.end(), target);
+            if(it != row.end() &amp;&amp; *it == target)   return true;
+        }
+        return false;
+    }
+};
+</code></pre>
+<h3 id="_30">解法三：</h3>
+<p>https://leetcode.cn/problems/search-a-2d-matrix-ii/solutions/2361487/240-sou-suo-er-wei-ju-zhen-iitan-xin-qin-7mtf</p>
+<p>将矩阵逆时针旋转45度，将其变成二叉搜索树</p>
+<p>以右上角为根节点</p>
+<p>如果超出边界，说明无解</p>
+<pre><code class="language-c++">class Solution {
+public:
+    bool searchMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) {
+        int i = 0, j = matrix[0].size() - 1;
+        while(i &lt;= matrix.size() - 1 &amp;&amp; j &gt;= 0 ){
+            if(matrix[i][j] == target) return true;
+            if(matrix[i][j] &lt; target) i++;
+            else j--;
+        }
+        return false;
+    }
+};
+</code></pre>
+<h2 id="279">279 完全平方数</h2>
+<p>思路：</p>
+<p>题目要求和为i的完全平方数最小数量</p>
+<p>假设选择了j (j &lt;= i)，那么接下来要找的就是和为i - j*j的完全平方数最小数量</p>
+<p>可以看出，这是一个状态递推式，可以使用动态规划</p>
+<p>f[i - j* j]下标比f[i]小，所以可以从小到大遍历</p>
+<pre><code class="language-C++">class Solution {
+public:
+    int numSquares(int n) {
+        // dp[i]表示和为i的完全平方数的最少数量
+        // dp[0] = 0
+        vector&lt;int&gt; dp(n + 1, 0);
+        for(int i = 1; i &lt;= n; i++){
+            // 枚举完全平方数
+            dp[i] = INT_MAX;
+            for(int j = 1; j * j &lt;=i; j++){
+                dp[i] = min(dp[i],1 + dp[i - j * j]);
+            }
+        }
+        return dp[n];
+    }
+};
+</code></pre>
+<h2 id="503-ii">503 下一个更大元素II</h2>
+<p>https://leetcode.cn/problems/next-greater-element-ii/description/</p>
+<p>遍历一遍数组显然不够，可复制一份数组拼接在原数组末尾，实现循环数组</p>
+<p>实际操作中，我们不需要复制，只需要遍历两次数组即可，i % n 对应nums的下标</p>
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;int&gt; nextGreaterElements(vector&lt;int&gt;&amp; nums) {
+        int n = nums.size();
+        stack&lt;int&gt; stk;
+        vector&lt;int&gt; ans(n, -1);
+        for (int i = 0; i &lt; 2 * n - 1; i++) {
+            while (!stk.empty() &amp;&amp; nums[i % n] &gt; nums[stk.top()]) {
+                ans[stk.top()] = nums[i % n];
+                stk.pop();
+            }
+            stk.push(i % n);
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度: O(n)，其中 n 是序列的长度。我们需要遍历该数组中每个元素最多 2 次，每个元素出栈与入栈的总次数也不超过 4 次。</p>
+<p>空间复杂度: O(n)，其中 n 是序列的长度。空间复杂度主要取决于栈的大小，栈的大小至多为 2n−1。</p>
+<h2 id="509">509 斐波那契数</h2>
+<p>https://leetcode.cn/problems/fibonacci-number/description/</p>
+<p>和爬楼梯类似，不赘述</p>
+<h2 id="547">547 省份数量</h2>
+<h3 id="dfs_1">解法一：dfs</h3>
+<p>本题nxn矩阵可视作邻接矩阵，对其可以进行图论的dfs或bfs遍历，找出所有的连通分量</p>
+<p>关键在于如果计算连通分量的个数：如果第i - 1次dfs遍历后仍有节点没有被遍历，说明其属于新的连通分量</p>
+<pre><code class="language-C++">class Solution {
+private:
+    void dfs(vector&lt;vector&lt;int&gt;&gt;&amp; isConnected, vector&lt;bool&gt;&amp; isVisited, int idx){
+        for(int j = 0; j &lt; isConnected[idx].size(); j++){
+            if(isConnected[idx][j] &amp;&amp; !isVisited[j]){
+                isVisited[j] = true;
+                dfs(isConnected, isVisited, j);
+            }
+        }
+    }
+public:
+    int findCircleNum(vector&lt;vector&lt;int&gt;&gt;&amp; isConnected) {
+        int n = isConnected.size();
+        vector&lt;bool&gt; isVisited(n, false);
+        int ans = 0;
+        for(int i = 0; i &lt; n; i++){
+            // 遍历一遍后，如果第二遍还出现了没有遍历过的节点
+            // 说明出现新的连通分量
+            if(!isVisited[i]){
+                // 找出i对应的所有连通节点，对其标记
+                dfs(isConnected, isVisited, i);
+                // i没有被访问过，所以出现新的连通分量
+                ans++;
+            }
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：$O(n^2)$，其中 n 是城市的数量。需要遍历矩阵 n 中的每个元素。</p>
+<p>空间复杂度：$O(n)$，其中 n 是城市的数量。需要使用数组 visited 记录每个城市是否被访问过，数组长度是 n，递归调用栈的深度不会超过 n</p>
+<h3 id="bfs_1">解法二： bfs</h3>
+<p>与dfs类似，以每个节点bfs遍历一遍，如果遍历停止，说明其访问完所有相连的节点</p>
+<p>遍历后还有未访问的节点，说明有新的连通分量</p>
+<pre><code class="language-C++">class Solution {
+public:
+    int findCircleNum(vector&lt;vector&lt;int&gt;&gt;&amp; isConnected) {
+        int n = isConnected.size();
+        vector&lt;bool&gt; isVisited(n, false);
+        int ans = 0;
+        for(int i = 0; i &lt; n; i++){
+            queue&lt;int&gt; q;
+            if(!isVisited[i]){
+                ans++;
+                q.push(i);
+                while(!q.empty()){
+                    int idx = q.front();
+                    q.pop();
+                    for(int j = 0; j &lt; n; j++){
+                        if(isConnected[idx][j] &amp;&amp; !isVisited[j]){
+                            q.push(j);
+                            isVisited[j] = true;
+                        }
+                    }
+                }
+            }
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：$O(n^2)$，其中 n 是城市的数量。需要遍历矩阵 isConnected 中的每个元素。</p>
+<p>空间复杂度：$O(n)$，其中 n 是城市的数量。需要使用数组 visited 记录每个城市是否被访问过，数组长度是 n，广度优先搜索使用的队列的元素个数不会超过 n。</p>
+<h3 id="_31">解法三： 并查集</h3>
+<pre><code class="language-C++">class Solution {
+public:
+    int Find(vector&lt;int&gt;&amp; p, int x) {
+        if (p[x] != x)
+            p[x] = Find(p, p[x]);
+        return p[x];
+    }
+    void Union(vector&lt;int&gt;&amp; p, int x, int y) { p[Find(p, x)] = Find(p, y); }
+
+    int findCircleNum(vector&lt;vector&lt;int&gt;&gt;&amp; isConnected) {
+        int n = isConnected.size();
+        int m = isConnected[0].size();
+        vector&lt;int&gt; parent(n);
+        for (int i = 0; i &lt; n; i++)
+            parent[i] = i;
+        for (int i = 0; i &lt; n; i++) {
+            for (int j = i + 1; j &lt; m; j++) {
+                if (isConnected[i][j])
+                    Union(parent, i, j);
+            }
+        }
+        int ans = 0;
+        for (int i = 0; i &lt; n; i++) {
+            if (parent[i] == i)
+                ans++;
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：$O(n^2logn)$，其中 n 是城市的数量。需要遍历矩阵 isConnected 中的所有元素，时间复杂度是 $O(n^2)$，如果遇到相连关系，则需要进行 2 次查找和最多 1 次合并，一共需要进行 $2n^2$次查找和最多$n^2$次合并，因此总时间复杂度是$ O(2n^2logn^2 )=O(n^2logn)$。这里的并查集使用了路径压缩，但是没有使用按秩合并，最坏情况下的时间复杂度是 $O(n^2logn)$，平均情况下的时间复杂度依然是 $O(n2α(n))$，其中 α 为阿克曼函数的反函数，$α(n) $可以认为是一个很小的常数。</p>
+<p>空间复杂度：$O(n)$，其中 n 是城市的数量。需要使用数组 parent 记录每个城市所属的连通分量的祖先。</p>
+<h2 id="684">684 冗余连接</h2>
+<p>https://leetcode.cn/problems/redundant-connection/</p>
+<p>本题给出n个点和n条边，由于树的边数为节点数 -1， 所以实际上只会多出一条边，这条边就是我们要求的解</p>
+<p>如果多条答案边，创一个ans数组依次放入，最后返回末尾元素即可（即栈顶元素）</p>
+<pre><code class="language-C++">class Solution {
+private:
+    vector&lt;int&gt; p;
+    void init(int n){
+        p.resize(n + 1);
+        for(int i = 1; i &lt;= n; i++)
+            p[i] = i;
+    }
+    int Find(int x){
+        if(p[x] != x) p[x] = Find(p[x]);
+        return p[x];
+    }
+    void Union(int x, int y){
+        p[Find(x)] = Find(y);
+    }
+public:
+    vector&lt;int&gt; findRedundantConnection(vector&lt;vector&lt;int&gt;&gt;&amp; edges) {
+        int n = edges.size();
+        init(n);
+        for(auto edge: edges){
+            int x = edge[0], y = edge[1];
+            if(Find(x) != Find(y)){
+                Union(x, y);
+            }
+            // p[x] == p[y]说明x和y在一棵树中了，此时多加的那条边会使树变成图，即题解
+            else return edge;
+        }
+        return vector&lt;int&gt;();
+    }
+};
+</code></pre>
+<h2 id="739">739 每日温度</h2>
+<p>https://leetcode.cn/problems/daily-temperatures/description/</p>
+<blockquote>
+<p>找出左/右边第一个比栈顶元素小 -&gt;  单调递增栈</p>
+<p>找出左/右边第一个比栈顶元素大 -&gt; 单调递减栈</p>
+</blockquote>
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;int&gt; dailyTemperatures(vector&lt;int&gt;&amp; temperatures) {
+        int n = temperatures.size();
+        stack&lt;int&gt; stk;
+        vector&lt;int&gt; ans(n, 0);
+        for(int i = 0; i &lt; n; i++){
+            // 单调递减栈，弹出说明新元素i是第一个比栈顶元素大的元素
+            while(!stk.empty() &amp;&amp; temperatures[i] &gt; temperatures[stk.top()]){
+                // 题目问的是几天后
+                ans[stk.top()] = i - stk.top();
+                stk.pop();
+            }
+            stk.push(i);
+        }
+        return ans;
+    }
+};
+</code></pre>
+<p><strong>复杂度分析</strong></p>
+<p>时间复杂度：O(n)，其中 n 是温度列表的长度。正向遍历温度列表一遍，对于温度列表中的每个下标，最多有一次进栈和出栈的操作。</p>
+<p>空间复杂度：O(n)，其中 n 是温度列表的长度。需要维护一个单调栈存储温度列表中的下标。</p>
+<h2 id="763">763 划分字母区间</h2>
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;int&gt; partitionLabels(string s) {
+        int n = s.size();
+        int last[26];
+        vector&lt;int&gt; res;
+        // 统计每个字符最后出现的下标
+        for(int i = 0; i &lt; n; i++){
+            last[s[i] - 'a'] = i;
+        }
+        // start为区间开始点，end为区间结束点
+        // end一定为某区间内所有last[j]的最大值
+        int start = 0, end = 0;
+        for(int i = 0; i &lt; n; i++){
+            end = max(end, last[s[i] - 'a']);
+            // i == end 说明区间终点end已确定 且已遍历到区间终点end
+            if(i == end){
+                res.push_back(end - start + 1);
+                start = end + 1;
+            }
+        }
+        return res;
+    }
+};
+</code></pre>
+<p>复杂度分析</p>
+<p>时间复杂度：O(n)，其中 n 是字符串的长度。需要遍历字符串两次，第一次遍历时记录每个字母最后一次出现的下标位置，第二次遍历时进行字符串的划分。</p>
+<p>空间复杂度：O(∣Σ∣)，其中 Σ 是字符串中的字符集。这道题中，字符串只包含小写字母，因此 ∣Σ∣=26。</p>
+<h2 id="_32">刷题总结</h2>
+<h3 id="_33">滑动窗口</h3>
+<blockquote>
+<p>单向队列queue，<code>#include &lt;queue&gt;</code> , 仅支持插入队尾push(int i)，弹出队头pop()</p>
+<p>双向队列duque，<code>#include&lt;deque&gt;</code>, 支持插入队头push_front(int i)，插入队尾push_back(int i)，删除队头pop_front()，删除队尾pop_back()</p>
+</blockquote>
+<p>对于一般的滑动窗口，如果不用pop队尾，可以用queue</p>
+<pre><code class="language-C++">        queue&lt;int&gt; q;
+        // 遍历序列每个元素
+        for(int i = 0; i &lt; n; i++){
+        // 检查新加入的元素是否满足条件，如果满足，加入队尾
+        if(check(q.front(), i))
+                q.push(i);
+        // 根据问题，对插入的nums[i]操作
+        ...
+        // check(q.front())意为：检查队头是否满足条件，如果不满足，则弹出
+                while(!q.empty() &amp;&amp; check(q.front())){
+                        q.pop();
+                }
+        }
+</code></pre>
+<p>如果需要求滑动窗口最大最小值，可以使用deque</p>
+<pre><code class="language-C++">        deque&lt;int&gt; q;
+        // 遍历序列每个元素
+        for(int i = 0; i &lt; n; i++){
+        // 检查队头是否满足条件，如果不满足，弹出队头    
+        while(!q.empty() &amp;&amp; check(q.front()))   q.pop_front();
+        // 检查队尾是否满足条件，如果不满足，弹出队尾
+        while(!q.empty() &amp;&amp; check(q.back(), i)) q.pop_back(i);
+        // 将新元素加入队尾
+        q.push_back(i);
+        }
+</code></pre>
+<p>例如acwing 154 滑动窗口</p>
+<p>https://www.acwing.com/problem/content/156/</p>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+#include &lt;deque&gt;
+using namespace std;
+
+const int N = 1e6 + 10;
+int a[N];
+int n, k;
+
+int main(){
+    deque&lt;int&gt; q;
+    cin &gt;&gt; n &gt;&gt; k;
+    for(int i = 0; i &lt; n; i++)
+        cin &gt;&gt; a[i];
+    // 求滑动窗口最小值
+    for(int i = 0; i &lt; n; i++){
+        // 队列存储的是滑动窗口的最小值的索引
+        // 队列的长度不一定为k
+
+        // 窗口第一个元素的索引为idx，长度为k的窗口对应的末尾元素的索引为idx + k - 1，也为i
+        // 所以i = idx + k - 1 或idx = i - k + 1
+        // 可推出：
+        // （1）i = idx + k - 1:
+        //      所以一开始idx = 0，窗口未满，往里面填元素，当i == k - 1时，窗口刚好满；之后i &gt; k - 1
+        // （2）idx = i + k - 1:
+        //      想要保持窗口一直为k，那么需要idx = i - k + 1 &lt;= q.front()
+        //      如果i - k + 1 &gt; q.front() 说明队头已经不在窗口内，需要弹出
+
+
+        // pop前保证队列不为空 且 保证窗口始终保持在k个
+        // 如果超出k个，说明队头需要弹出
+        // 如果不足或等于k个，队头也不需要弹出
+        while(!q.empty() &amp;&amp; i - k + 1 &gt; q.front()) q.pop_front();
+        // pop前保证队列不为空 且 如果队尾元素a[q.back()]比新元素a[i]还小
+        // 那么只要a[i]还在窗口内，之后窗口的最小值一定不为a[q.back()]
+        // 因此弹出队尾元素
+        while(!q.empty() &amp;&amp; a[i] &lt; a[q.back()]) q.pop_back();
+        q.push_back(i);
+
+        if(i - k + 1 &gt;= 0)
+            cout &lt;&lt; a[q.front()] &lt;&lt; &quot; &quot;;
+    }
+    q.clear();
+    cout &lt;&lt; endl;
+    // 求滑动窗口最大值
+    for(int i = 0; i &lt; n; i++){
+        while(!q.empty() &amp;&amp; i - q.front() + 1 &gt; k) q.pop_front();
+        while(!q.empty() &amp;&amp; a[i] &gt; a[q.back()]) q.pop_back();
+        q.push_back(i);
+        if(i - k + 1 &gt;= 0)
+            cout &lt;&lt; a[q.front()] &lt;&lt; &quot; &quot;;
+    }
+}
+</code></pre>
+<p>当然，还可以使用双指针，只需要指向原来的数组即可</p>
+<h3 id="_34">图：网格问题</h3>
+<p>网格问题</p>
+<h3 id="_35">并查集</h3>
+<p>可解决图的连通分量问题</p>
+<h3 id="_36">单调栈</h3>
+<h2 id="stl">STL</h2>
+<h3 id="_37">二分查找</h3>
+<p>https://blog.csdn.net/weixin_45031801/article/details/137544229</p>
+<p>lower_bound( begin , end , val , less<type>() )
+上述代码中加入了 less<type>() 自定义比较函数：适用于从小到大排序的有序序列，从数组/容器的 beign 位置起，到 end-1 位置结束，查找第一个 大于等于 val 的数字
+lower_bound( begin , end , val , greater<type>() )
+上述代码中加入了 greater<type>() 自定义比较函数：适用于从大到小排序的有序序列，从数组/容器的 beign 位置起，到 end-1 位置结束，查找第一个 小于等于 val 的数字</p>
+<h4 id="upper_bound">upper_bound</h4>
+<p>前提是有序的情况下，upper_bound返回第一个大于val值的位置。（通过二分查找）</p>
+<h4 id="lower_bound">lower_bound</h4>
+<p>前提是<strong>有序</strong>的情况下，lower_bound 返回指向第一个值不小于 val 的位置，也就是返回第一个大于等于val值的位置。（通过二分查找）</p>
+<p><strong><em>*注意：*</em></strong>需要注意的是如果例子中（val &gt;= 8）,那么迭代器就会指向last位置，<strong><em>*也就是数组尾元素的下一个，不管val多大，迭代器永远指向尾元素的下一个位置*</em></strong></p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main()
+{
+    vector&lt;int&gt; v = { 3,4,1,2,8 };
+    // 先排序
+    sort(v.begin(), v.end());  // 1 2 3 4 8
+
+    // 定义两个迭代器变量
+    vector&lt;int&gt;::iterator iter1;
+    vector&lt;int&gt;::iterator iter2;
+
+    // 在动态数组中寻找 &gt;=3 出现的第一个数 并以迭代器的形式返回
+    iter1 = lower_bound(v.begin(), v.end(), 3);  // -- 指向3
+    // 在动态数组中寻找 &gt;=7 出现的第一个数 并以迭代器的形式返回
+    iter2 = lower_bound(v.begin(), v.end(), 7);  // -- 指向8
+
+    cout &lt;&lt; distance(v.begin(), iter1) &lt;&lt; endl; //下标 2
+    cout &lt;&lt; distance(v.begin(), iter2) &lt;&lt; endl; //下标 4 
+    return 0;
+}
+
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
